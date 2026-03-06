@@ -1,21 +1,21 @@
 import java.util.ArrayList;
 
 public class MusicalShow extends Show {
-   private String musicAuthor;
+   private Person musicAuthor;
    private String librettoText;
 
-    public MusicalShow(Director director, ArrayList<Actor> listIfActors, String title, int duration, String musicAuthor, String librettoText) {
+    public MusicalShow(Director director, ArrayList<Actor> listIfActors, String title, int duration, Person musicAuthor, String librettoText) {
         super(director, listIfActors, title, duration);
         this.musicAuthor = musicAuthor;
         this.librettoText = librettoText;
     }
 
 
-    public String getMusicAuthor() {
+    public Person getMusicAuthor() {
         return musicAuthor;
     }
 
-    public void setMusicAuthor(String musicAuthor) {
+    public void setMusicAuthor(Person musicAuthor) {
         this.musicAuthor = musicAuthor;
     }
 

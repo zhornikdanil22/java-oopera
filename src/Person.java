@@ -1,16 +1,14 @@
 import java.util.Objects;
 
 public class Person {
-     private String name;
-     private String surname;
-     private int height;
-     private Gender gender;
+     protected String name;
+     protected String surname;
+     protected Gender gender;
 
 
-    public Person(String name, String surname, int height, Gender gender) {
+    public Person(String name, String surname, Gender gender) {
         this.name = name;
         this.surname = surname;
-        this.height = height;
         this.gender = gender;
     }
 
@@ -30,13 +28,6 @@ public class Person {
         this.surname = surname;
     }
 
-    public int getHeight() {
-        return height;
-    }
-
-    public void setHeight(int height) {
-        this.height = height;
-    }
 
     public Gender getGender() {
         return gender;
@@ -46,16 +37,5 @@ public class Person {
         this.gender = gender;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Person person = (Person) o;
-        return height == person.height && Objects.equals(name, person.name) && Objects.equals(surname, person.surname) && gender == person.gender;
-    }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(name, surname, height, gender);
-    }
 }

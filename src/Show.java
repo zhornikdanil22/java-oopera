@@ -25,9 +25,7 @@ public class Show {
 
     public boolean addActor(Actor newActor) {
         for (Actor existingActor : listIfActors) {
-            if (existingActor.getName().equals(newActor.getName()) &&
-                    existingActor.getSurname().equals(newActor.getSurname()) &&
-                    existingActor.getHeight() == newActor.getHeight()) {
+            if (existingActor.equals(newActor)) {
                 System.out.println("Актёр с таким именем, фамилией и ростом уже существует.");
                 return false;
             }
@@ -71,5 +69,13 @@ public class Show {
     public boolean removeActor(Actor actor) {
         return listIfActors.remove(actor);
     }
+    public boolean replaceActor(Actor oldActor, Actor newActor) {
+        if (listIfActors.remove(oldActor)) { // Пытаемся удалить старого актёра
+            listIfActors.add(newActor); // Добавляем нового актёра, если старый был успешно удалён
+            return true;
+        }
+        return false; // Возвращаем false, если старый актёр не был найден и не удалён
+    }
+
 }
 
