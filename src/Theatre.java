@@ -48,8 +48,6 @@ public class Theatre {
 
         System.out.println("Обновлённый список актёров обычного спектакля:");
         showClassic.printAllActor();
-        System.out.println("Обновлённый список актёров балета:");
-        ballet.printAllActor();
 
         boolean actorRemoved = opera.removeActor(new Actor("Милана", "Данилова",  Gender.FEMALE,29));
         if (actorRemoved) {
